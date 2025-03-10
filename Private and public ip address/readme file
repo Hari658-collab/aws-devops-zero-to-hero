@@ -1,0 +1,38 @@
+### **Public vs. Private IP Address**  
+
+| **Feature**                              | **Public IP Address** |                                                             **Private IP Address** |
+|------------|---------------------|----------------------|
+| **Definition**                           | A globally unique IP address assigned by an ISP (Internet Service Provider)  | A local IP address used within a private network (LAN) 
+                                             to communicate over the internet.                                               that is not routable on the internet. |
+| **Accessibility**                        | Accessible over the internet.                                                | Only accessible within the private network. |
+| **Uniqueness**                           | Unique across the internet.                                                  | Can be reused across different private networks. |
+| **Assigned By**                          | Internet providers (AWS, ISPs, etc.).                                        | Network administrators, routers (via DHCP). |
+| **Security**                             | More vulnerable; needs firewalls & security measures.                        | More secure as it's isolated from the internet. |
+| **Example**                              | 34.56.78.90 (AWS EC2 instance, website, API)                                 | 192.168.1.1, 10.0.0.1 (home router, internal VPC                                                                                                                                   instances) |
+
+---
+
+### **Why Does Production Use Public IP Addresses?**
+1. **Internet Accessibility**  
+   - Applications, APIs, and websites need to be accessible from anywhere.  
+   
+2. **Global Reachability**  
+   - Services like web servers, APIs, and cloud-based apps require a public IP for external users.  
+
+3. **Load Balancing & CDN**  
+   - Public IPs enable load balancers and content delivery networks (CDNs) to distribute traffic efficiently.  
+
+4. **DNS Mapping**  
+   - Public IPs are mapped to domain names for easy access (e.g., `example.com → 52.23.45.67`).  
+
+5. **External Integrations**  
+   - Third-party services, APIs, and partners need a public-facing endpoint to interact with your application.  
+
+---
+
+### **When to Use Private IP?**
+- Internal communication within a **VPC** (AWS Virtual Private Cloud).  
+- Connecting **databases, internal services, or backend applications** securely.  
+- For enhanced **security & cost efficiency** (avoiding NAT Gateway charges).  
+
+Would you like help with configuring public and private IPs in AWS? 🚀
